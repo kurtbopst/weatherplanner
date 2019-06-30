@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" conten="width=device-width, initial-scale=1.0" />
+        <title>Weather Planner</title>
+        <link rel="stylesheet" type="text/css" href="beauty.css">
+
+        <!--- Leaflet.js -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+         <style>
+             #locate-map {
+                 height: 180px;
+                 padding: 10px;
+             }
+             .login {
+                 position: relative;
+                 float: right;
+                 
+             }
+         </style>       
+    </head>
+<body>
+<h1> Weather Planner</h1>
+<!-- Don't let weather rain on your parade! -->
+<div id="login"> 
+    <button>Log in</button>
+    <href a="signup.html" style="color: rgb(124, 187, 241)">Sign up</href>
+</div>
+<p> From where do you want weather updates?</p>
+<p class='note'> *Enable geolocation to help us narrow your search! </p>
+
+<div id="locate-map" ></div>
+<div class="get-forecast" onclick="getWeather(coords)">Get forecast!</div>
+
+<h3>5-day Forecast</h3>
+<p class='note'> Showing forecast for 3 O'clock in the Afternoon</p>
+<div class="forecast-container">
+    <table class="forecast-table">
+        <!-- 7 columns for days of week- Spread evenly
+            on mouseOver/click day expands showing more info
+            when Expanded: like 8 cols evenly but expanded takes up 2-->
+        <tr class='days-of-week'>
+            <th id="1-dt">5/6</th>
+            <th id="2-dt">5/7</th>
+            <th id="3-dt">5/8</th>
+            <th id="4-dt">5/9</th>
+            <th id="5-dt">5/10</th>
+        </tr>
+        <tr class="forecast-pic"><!-- Weather Pic-->
+            <td><img id="1-pic" class="fc-img" src="src/weather/sunny.png"></td>
+            <td><img id="2-pic" class="fc-img" src="src/weather/sunny.png"></td>
+            <td><img id="3-pic" class="fc-img" src="src/weather/sunny.png"></td>
+            <td><img id="4-pic" class="fc-img" src="src/weather/sunny.png"></td>
+            <td><img id="5-pic" class="fc-img" src="src/weather/sunny.png"></td>
+        </tr>
+        <tr>
+            <td id="1-avg" class="avg-temp">96 °F</td>
+            <td id="2-avg" class="avg-temp">85 °F</td>
+            <td id="3-avg" class="avg-temp">54 °F</td>
+            <td id="4-avg" class="avg-temp">83 °F</td>
+            <td id="5-avg" class="avg-temp">96 °F</td>
+        </tr>
+        <tr>
+            <td id="1-hl" class="highlow-temp">High  98<br>Low  93</td>
+            <td id="2-hl" class="highlow-temp">High  89<br>Low  86</td>
+            <td id="3-hl" class="highlow-temp">High  88<br>Low  80</td>
+            <td id="4-hl" class="highlow-temp">High  98<br>Low  90</td>
+            <td id="5-hl" class="highlow-temp">High  98<br>Low  93</td>
+        </tr>
+    </table>
+</div>
+<h3>Current Weather</h3>
+<div class="forecast-container">
+    <table class="forecast-table">
+        <!-- Current Forecast-->
+        <tr class='days-of-week'>
+            <th id="0-dt">5/6</th>
+        </tr>
+        <tr class="forecast-pic"><!-- Weather Pic-->
+            <td><img id="0-pic" class="fc-img" src="src/weather/sunny.png"></td>
+        </tr>
+        <tr>
+            <td id="0-avg" class="avg-temp">96 °F</td>
+           
+        </tr>
+        <tr>
+            <td id="0-hl" class="highlow-temp">High  98<br>Low  93</td>
+        </tr>
+    </table>
+</div>
+<script src="5day.js"></script>
+    
+</body>
+</html>

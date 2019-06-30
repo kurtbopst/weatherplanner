@@ -1,0 +1,79 @@
+body {
+    background-image: url("src/images/dark-sun-pattern.png");
+}
+h1 {
+    text-align: center;
+    color: blueviolet;
+}
+
+h2, h3, p {
+    text-align: center;
+    color: white;
+    font-family: 'Lora', serif;
+}
+
+.note {
+    float: center;
+    font-style: italic;
+    font-size: 70%;
+}
+
+.get-forecast{ 
+    background: url("src/images/light-sun-pattern.png");
+    display: flex;
+    overflow: hidden;
+
+    font-family: 'Lora', serif; 
+    text-align: center;
+    
+    
+    margin: 10px 50px 20px;
+    padding: 12px 12px;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all 150ms linear;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+
+}
+
+.forecast-container{
+    margin: auto;
+    align-content: center;
+    display: table;
+}
+th, td {
+    text-align: center;
+}
+
+.forecast-table{
+    height: 200px;
+    width: 600px;
+    box-shadow: 0 0 7px 4px black;
+    color: white;
+    text-align: right;
+    background-color: #0e0e0e;
+}
+
+.forecast-table img{
+    padding: 0px;
+    height: 40px;
+    width: 40px;
+}
+.avg-temp{
+    text-align: center;
+    font-size: 15px;
+
+}
+.avg-temp p{
+    float: left;
+    font-size: 20px;
+}
+
+.highlow-temp {
+    text-align: right;
+    font-family: 'Trebuchet MS'; 
+    font-size: 11px;
+}
