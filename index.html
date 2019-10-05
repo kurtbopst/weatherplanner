@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" conten="width=device-width, initial-scale=1.0" />
         <title>Weather Planner</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
         <link rel="stylesheet" type="text/css" href="beauty.css">
 
         <!--- Leaflet.js -->
@@ -26,22 +27,36 @@
          </style>       
     </head>
 <body>
-<h1> Weather Planner</h1>
-<!-- Don't let weather rain on your parade! -->
-<div id="login"> 
-    <button>Log in</button>
-    <href a="signup.html" style="color: rgb(124, 187, 241)">Sign up</href>
+<div class="container">
+    <h1> Weather Planner</h1>
+
+    <button type="button" class="btn btn-info">Log in</button>
+    <button type="button" class="btn btn-link">
+        <href a="signup.html" style="color: rgb(124, 187, 241)">Sign up</href>
+    </button>
 </div>
+
+<!-- Don't let weather rain on your parade! -->
+
 <p> From where do you want weather updates?</p>
 <p class='note'> *Enable geolocation to help us narrow your search! </p>
 
-<div id="locate-map" ></div>
-<div class="get-forecast" onclick="getWeather(coords)">Get forecast!</div>
+<div class="container">
+    <div id="locate-map" ></div>
+</div>
+<div class="container">
+    <button type="button" class="btn btn-info" onclick="getWeather(coords)" style="align-self: center">Get forecast!</button>
+</div>
+<div class="container">
+    <h3>5-day Forecast</h3>
+</div>
 
-<h3>5-day Forecast</h3>
-<p class='note'> Showing forecast for 3 O'clock in the Afternoon</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
 <div class="forecast-container">
-    <table class="forecast-table">
+    <table class="table forecast-table table-borderless">
         <!-- 7 columns for days of week- Spread evenly
             on mouseOver/click day expands showing more info
             when Expanded: like 8 cols evenly but expanded takes up 2-->
@@ -67,17 +82,26 @@
             <td id="5-avg" class="avg-temp">96 °F</td>
         </tr>
         <tr>
-            <td id="1-hl" class="highlow-temp">High  98<br>Low  93</td>
-            <td id="2-hl" class="highlow-temp">High  89<br>Low  86</td>
-            <td id="3-hl" class="highlow-temp">High  88<br>Low  80</td>
-            <td id="4-hl" class="highlow-temp">High  98<br>Low  90</td>
-            <td id="5-hl" class="highlow-temp">High  98<br>Low  93</td>
+            <td id="1-hl" class="text-center highlow-temp">High  98<br>Low  93</td>
+            <td id="2-hl" class="text-center highlow-temp">High  89<br>Low  86</td>
+            <td id="3-hl" class="text-center highlow-temp">High  88<br>Low  80</td>
+            <td id="4-hl" class="text-center highlow-temp">High  98<br>Low  90</td>
+            <td id="5-hl" class="text-center highlow-temp">High  98<br>Low  93</td>
         </tr>
     </table>
 </div>
+
+
+        </div>
+    </div>
+</div>
 <h3>Current Weather</h3>
+<div class="container">
+        <div class="row">
+            <div class="col-3">
+
 <div class="forecast-container">
-    <table class="forecast-table">
+    <table class="table forecast-table table-borderless">
         <!-- Current Forecast-->
         <tr class='days-of-week'>
             <th id="0-dt">5/6</th>
@@ -90,9 +114,14 @@
            
         </tr>
         <tr>
-            <td id="0-hl" class="highlow-temp">High  98<br>Low  93</td>
+            <td id="0-hl" class="text-center highlow-temp">High  98<br>Low  93</td>
         </tr>
     </table>
+    
+</div>
+
+        </div>
+    </div>
 </div>
 <script src="5day.js"></script>
     
